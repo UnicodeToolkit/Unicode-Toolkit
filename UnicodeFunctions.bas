@@ -1,4 +1,6 @@
 Attribute VB_Name = "UnicodeFunctions"
+Option Explicit
+
 Public Function is_valid_decimal(s As String) As Boolean
 Dim i As Integer
 Dim j As Integer
@@ -32,27 +34,69 @@ is_valid_hex = to_return
 End Function
 
 Public Function dec2hex(d As Long) As String
+ If (d = 0) Then
+  dec2hex = "0"
+  Exit Function
+ End If
+ If d > 1114111 Then
+  d = 1114111
+ End If
  dec2hex = hex$(d)
 End Function
 
 Public Function dec2oct(d As Long) As String
+ If (d = 0) Then
+  dec2oct = "0"
+  Exit Function
+ End If
+ If d > 1114111 Then
+  d = 1114111
+ End If
  dec2oct = oct$(d)
 End Function
 
 Public Function hex2dec(h As String) As Long
- hex2dec = IIf(Len(h) > 0, CLng("&H" & h), 0)
+ If (h = "") Then
+  hex2dec = 0
+  Exit Function
+ End If
+ If Val(h) > 1114111 Then
+  h = "1114111"
+ End If
+ hex2dec = IIf(Len(h) > 0, Val("&H" & h), 0)
 End Function
 
 Public Function hex2oct(h As String) As String
- hex2oct = IIf(Len(h) > 0, oct$(CLng("&H" & h)), "0")
+ If (h = "") Then
+  hex2oct = "0"
+  Exit Function
+ End If
+ If Val(h) > 1114111 Then
+  h = "1114111"
+ End If
+ hex2oct = IIf(Len(h) > 0, oct$(Val("&H" & h)), "0")
 End Function
 
-Public Function oct2dec(h As String) As Long
- oct2dec = IIf(Len(h) > 0, CLng("&O" & h), 0)
+Public Function oct2dec(h As String) As String
+ If (h = "") Then
+  oct2dec = "0"
+  Exit Function
+ End If
+ If Val(h) > 4177777 Then
+  h = "4177777"
+ End If
+ oct2dec = IIf(Len(h) > 0, Val("&O" & h), "0")
 End Function
 
 Public Function oct2hex(h As String) As String
- oct2hex = IIf(Len(h) > 0, hex$(CLng("&O" & h)), "0")
+ If (h = "") Then
+  oct2hex = "0"
+  Exit Function
+ End If
+ If Val(h) > 4177777 Then
+  h = "4177777"
+ End If
+ oct2hex = IIf(Len(h) > 0, hex$(Val("&O" & h)), "0")
 End Function
 
 Public Function char2dec(ByRef Text As String) As Long

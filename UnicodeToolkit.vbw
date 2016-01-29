@@ -1,3 +1,14 @@
-Form1 = 367, 211, 1023, 828, , 15, 12, 623, 906, C
-UnicodeFunctions = 225, 225, 879, 842, 
-Module1 = 25, 25, 679, 642, 
+Form1 = 88, 116, 896, 604, Z, 44, 58, 856, 546, C
+UnicodeFunctions = 225, 225, 879, 842, C
+Module1 = 44, 58, 852, 546, C
+ComCtlsBase = 110, 145, 918, 633, C
+Common = 132, 174, 940, 662, C
+CommonDialog = 154, 203, 962, 691, C
+Enumeration = 0, 0, 808, 488, C
+ISubclass = 22, 29, 830, 517, C
+PPTextBoxWText = 132, 174, 940, 662, C, 154, 203, 962, 691, C
+TextBoxW = 22, 29, 830, 517, C, 0, 0, 808, 488, C
+VisualStyles = 66, 87, 874, 575, C
+VTableHandle = 88, 116, 896, 604, C
+VTableSubclass = 110, 145, 918, 633, C
+FrameW = 0, 0, 0, 0, C, 88, 116, 896, 604, C
